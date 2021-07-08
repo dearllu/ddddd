@@ -4,7 +4,8 @@ import (
 	"fmt"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
-	"gin-blog/pkg/setting"
+	//"gin-blog/pkg/setting"
+	"github.com/dearllu/ddddd/src/gin-blog/pkg/setting"
 )
 var db *gorm.DB
 type Model struct {
@@ -21,6 +22,8 @@ func init() {
 	if err != nil {
 		log.Fatal(2, "Fail to get section 'database': %v", err)
 	}
+
+
 	dbType = sec.Key("TYPE").String()
 	dbName = sec.Key("NAME").String()
 	user = sec.Key("USER").String()
